@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/webp" href="./images/Site-logo.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@200&display=swap" rel="stylesheet">
+
+  <title>PGR-replica</title>
+</head>
+
+<body class="transition-all ease-in-out bg-zinc-900">
+  <div id="app" class="flex-grow-1">
+    <header></header>
+    <nav class="z-50 fixed flex flex-col justify-center items-start h-screen gap-4 leading-10 px-4 ">
+      <button id="navPrompt">
+        <i class="fa-solid fa-arrows-spin text-white text-3xl "></i>
+      </button>
+
+      <div id="navList" class="nav-menu ">
+        <ul class="space-y-7">
+          <li class="navlink"><a href="#">home</a></li>
+          <li class="navlink"><a href="">news</a></li>
+          <li class="navlink"><a href="">characters</a></li>
+          <li class="navlink"> <a href="">media</a> </li>
+          <li class="navlink"> <a href="">others</a> </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="home" class="hero-section h-screen">
+      <div class="w-full h-screen hero-section relative px-4 py-6 flex flex-col items-center justify-between ">
+        <!-- hero-logo -->
+        <div class=" mt-10 w-60 hero-logo self-start"><img src="./images/hero-logo.png" class="w-full " alt=""> </div>
+        <!-- play prompt -->
+        <div>
+          <!-- Modal toggle -->
+          <button data-modal-target="heroModal" data-modal-toggle="heroModal" class="block  px-5 py-2.5 w-28 "
+            type="button">
+            <div class="w-full relative">
+              <img class=" absolute" src="./images/playbtn.png" alt="">
+              <img class=" blur-sm z-10 " src="./images/playbtn.png" alt="">
+            </div>
+          </button>
+
+          <!-- Main modal -->
+          <div id="heroModal" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-2xl max-h-full">
+              <!-- Modal content -->
+              <div class="relative bg-white rounded-lg shadow   dark:bg-gray-700">
+                <video controls id="heroPV">
+                  <source
+                    src="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/video/1686585600000/ds16mbfrqsywvqomxm-1686660217630.mp4"
+                    type="video/mp4">
+                </video>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- socials -->
+        <article class="self-end border-r-4  px-2 ">
+          <div class="socials-container ">
+            <div class="flex flex-col items-center justify-end px-2 gap-2">
+              <!-- links -->
+
+              <ul class="flex items-center justify-around gap-2 self-end">
+                <li class="fa-socials"><a href="https://www.facebook.com/PGR.Global/"><i
+                      class="fa-brands fa-facebook-f  px-2"></i></a></li>
+                <li class="fa-socials"><a href="https://twitter.com/PGR_GLOBAL"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li class="fa-socials"><a href="https://www.youtube.com/c/PunishingGrayRaven/"><i
+                      class="fa-brands fa-youtube"></i></a></li>
+                <li class="fa-socials"> <a href="https://discord.gg/pgr"><i class="fa-brands fa-discord"></i></a></li>
+                <li class="fa-socials"><a href="https://www.reddit.com/r/PunishingGrayRaven/"><i
+                      class="fa-brands fa-reddit-alien"></i></a>
+                </li>
+              </ul>
+
+              <!-- download providers -->
+              <ul class="flex items-center justify-around gap-2">
+                <li class="providers"><button><a href=""><img class="w-full" src="./images/providers/Googleplay.png"
+                        alt=""></a></button> </li>
+                <li class="providers"><button><a href=""><img class="w-full" src="./images/providers/Applestore.png"
+                        alt=""></a></button> </li>
+                <li class="providers"><button><a href=""><img class="w-full" src="./images/providers/windows.png"
+                        alt=""></a></button>
+                </li>
+              </ul>
+            </div>
+            <!-- QR -->
+            <div class="w-20">
+              <img class="w-full" src="./images/QR.png" alt="">
+            </div>
+          </div>
+          <!-- footer -->
+          <div class="absolute left-4 bottom-4 border-l-4 px-4 w-2/6  ">
+            <img class="w-full" src="./images/GraphicDesigns/hero-footer.png" alt="">
+          </div>
+        </article>
+
+        <!-- video -->
+        <div class="absolute top-0 left-0 -z-10 h-screen ">
+          <video autoplay loop poster="./images/hero-cv.jpg" class=" h-fit">
+            <source src="./images/GraphicDesigns/herovideo.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="news" class=" relative top-0 h-screen ">
+      <div class="news-wrapper h-screen -w-full flex justify-center items-center gap-4 ">
+        <!-- carousel -->
+        <div id="news-carousel" class="relative w-2/6 " data-carousel="slide">
+          <!-- Carousel wrapper -->
+          <div class="relative w-full overflow-hidden rounded-lg md:h-56 ">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="./images/carousel-1.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="./images/carousel-2.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="./images/carousel-3.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="./images/carousel-1.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+          </div>
+          <!-- Slider indicators -->
+          <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+              data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+              data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+              data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+              data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+              data-carousel-slide-to="4"></button>
+          </div>
+          <!-- Slider controls -->
+          <button type="button" class="carousel-btn left-0 rounded-l-lg" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-8 h-full sm:w-10 sm:h-10 ">
+              <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+
+              <span class="sr-only">Previous</span>
+            </span>
+          </button>
+          <button type="button" class="carousel-btn right-0 rounded-r-lg" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-8 h-full sm:w-10 sm:h-10  group-focus:outline-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="sr-only">Next</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- mid -->
+        <div class="h-4/5 opacity-50 ">
+          <img class="h-full" src="./images/GraphicDesigns/vertical-line_00000_00000.png " alt="">
+        </div>
+        <!-- articles -->
+        <article class="flex flex-col gap-2">
+          <!-- test -->
+          <div id="indicators-carousel" class="relative w-full flex flex-col" data-carousel="static">
+            <!-- title -->
+            <div class=" z-30 bg-black/30  ">
+              <ul class="flex justify-end px-6 gap-14 ">
+                <li class="list-item sub-btn " aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0">
+                  latest</li>
+                <li class="list-item  sub-btn" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1">
+                  event</li>
+                <li class="list-item sub-btn " aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2">news
+                </li>
+                <li class="list-item  sub-btn" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3">
+                  notice</li>
+              </ul>
+            </div>
+            <!-- NEWS wrapper -->
+            <div class="relative overflow-hidden rounded-lg md:h-60 ">
+              <!-- Item 1 -->
+              <div id="latest-content" class="hidden duration-700 ease-in-out" data-carousel-item="active">
+
+              </div>
+              <!-- Item 2 -->
+              <div id="event-content" class="hidden duration-700 ease-in-out" data-carousel-item>
+
+              </div>
+              <!-- Item 3 -->
+              <div id="newsContent" class="hidden duration-700 ease-in-out" data-carousel-item>
+
+              </div>
+              <!-- Item 4 -->
+              <div id="notice-content" class="hidden duration-700 ease-in-out" data-carousel-item>
+              </div>
+            </div>
+          </div>
+          <!-- test -->
+          <!-- more -->
+          <button class="font-semibold bg-white py-1 px-2 self-end hover:text-red-700"><a href="#">+ more</a></button>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section id="characters " class=" relative top-0  ">
+      <!-- cha-bg -->
+      <div class=" w-full absolute top-0 -z-30">
+        <video loop autoplay>
+          <source src="./images/GraphicDesigns/my-bg_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="cha-carousel" class="cha-wrapper  relative w-full" data-carousel="slide"> <!--change to slide-->
+        <!-- Cha wrapper -->
+        <div class=" relative overflow-hidden md:h-screen w-full ">
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./images/cha-1.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <article class="flex justify-around items-center ">
+              <!-- desc -->
+              <div class="w-1/2 absolute top-40 left-44">
+                <!-- details -->
+                <img src="./images/cha-1-des.png" alt="">
+                <div class=" flex  w-1/2 gap-6 ">
+                  <img src="./images/cha-1-faction.png" alt="">
+                  <img src="./images/cha-1-type.png " alt="">
+                </div>
+              </div>
+              <!-- cv -->
+              <div class="-z-30 w-1/2 flex flex-col  gap-4 absolute bottom-44 -right-28 ">
+                <img src="./images/cha-1-va.png" alt="">
+                <img src="./images/cha-1-name.png" alt="">
+                <img src="./images/cha-1-misc.png" alt="">
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Item 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./images/cha-2.png" class="absolute block w-full -translate-x-1/2 translate-y-20 left-2/4  "
+              alt="...">
+
+            <article class="flex justify-around items-center ">
+              <!-- desc -->
+              <div class="w-1/2 absolute top-40 left-44">
+                <!-- details -->
+                <img src="./images/cha-2-des.png" alt="">
+                <div class=" flex  w-1/2 gap-6 ">
+                  <img src="./images/cha-2-faction.png" alt="">
+                  <img src="./images/cha-2-type.png " alt="">
+                </div>
+              </div>
+              <!-- cv -->
+              <div class="-z-30 w-1/2 flex flex-col  gap-4 absolute bottom-44 -right-44 ">
+                <img src="./images/cha-2-va.png" alt="">
+                <img src="./images/cha-2-name.png" alt="">
+                <img src="./images/cha-2-misc.png" alt="">
+              </div>
+            </article>
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./images/cha-3.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+
+            <article class="flex justify-around items-center ">
+              <!-- desc -->
+              <div class="w-1/2 absolute top-40 left-44">
+                <!-- details -->
+                <img src="./images/cha-3-des.png" alt="">
+                <div class=" flex  w-1/2 gap-6 ">
+                  <img src="./images/cha-3-faction.png" alt="">
+                  <img src="./images/cha-3-type.png" alt="">
+                </div>
+              </div>
+              <!-- cv -->
+              <div class="-z-30 w-1/2 flex flex-col  gap-4 absolute bottom-44 -right-28 ">
+                <img src="./images/cha-3-va.png" alt="">
+                <img src="./images/cha-3-name.png" alt="">
+                <img src="./images/cha-3-misc.png" alt="">
+              </div>
+            </article>
+          </div>
+          <!-- Item 4 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./images/cha-4.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+
+            <article class="flex justify-around items-center ">
+              <!-- desc -->
+              <div class="w-1/2 absolute top-40 left-44">
+                <!-- details -->
+                <img src="./images/cha-4-des.png" alt="">
+                <div class=" flex  w-1/2 gap-6 ">
+                  <img src="./images/cha-4-faction.png" alt="">
+                  <img src="./images/cha-4-type.png " alt="">
+                </div>
+              </div>
+              <!-- cv -->
+              <div class="-z-30 w-1/2 flex flex-col  gap-4 absolute bottom-44 -right-28 ">
+                <img src="./images/cha-4-va.png" alt="">
+                <img src="./images/cha-4-name.png" alt="">
+                <img src="./images/cha-4-misc.png" alt="">
+              </div>
+            </article>
+          </div>
+          <!-- Item 5 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="./images/cha-5.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+
+            <article class="flex justify-around items-center ">
+              <!-- desc -->
+              <div class="w-1/2 absolute top-40 left-44">
+                <!-- details -->
+                <img src="./images/cha-5-des.png" alt="">
+                <div class=" flex  w-1/2 gap-6 ">
+                  <img src="./images/cha-5-faction.png" alt="">
+                  <img src="./images/cha-5-type.png " alt="">
+                </div>
+              </div>
+              <!-- cv -->
+              <div class="-z-30 w-1/2 flex flex-col  gap-4 absolute bottom-44 -right-28 ">
+                <img src="./images/cha-5-va.png" alt="">
+                <img src="./images/cha-5-name.png" alt="">
+                <img src="./images/cha-5-misc.png" alt="">
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-4 bottom-64 left-48">
+          <button type="button" class="w-12 h-[0.15em] rounded-sm " aria-current="true" aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+          <button type="button" class="w-12 h-[0.15em] rounded-sm " aria-current="false" aria-label="Slide 2"
+            data-carousel-slide-to="1"></button>
+          <button type="button" class="w-12 h-[0.15em] rounded-sm " aria-current="false" aria-label="Slide 3"
+            data-carousel-slide-to="2"></button>
+          <button type="button" class="w-12 h-[0.15em] rounded-sm " aria-current="false" aria-label="Slide 4"
+            data-carousel-slide-to="3"></button>
+          <button type="button" class="w-12 h-[0.15em] rounded-sm " aria-current="false" aria-label="Slide 5"
+            data-carousel-slide-to="4"></button>
+        </div>
+      </div>
+
+
+    </section>
+  </div>
+
+
+  <footer class="flex flex-grow-0 gap-6 justify-center items-center p-6 border-t-4 border-pink-600 bg-zinc-900">
+    <div class="w-1/6">
+      <img class="w-full" src="./images/kurogames-logo.png" alt="">
+    </div>
+
+    <div class="w-1/3">
+      <ul class=" sub-btn text-sm flex items-center  justify-around gap-4 ">
+        <li><a href="https://pgr.kurogame.net/p/terms_of_service">Terms of Service</a></li> |
+        <li><a href="https://pgr.kurogame.net/p/privacy_policy">Privacy Policy</a> </li>
+      </ul>
+      <ul class="  text-xs flex flex-col items-center  justify-around gap-4 ">
+        <li class="sub-btn">* All rights of images, texts, audio, videos, etc. published on this website belong to KURO
+          TECHNOLOGY (HONG KONG) CO.,
+          LTD. Unauthorized use or copying is strictly prohibited.</li>
+        <li class="sub-btn">* ©KURO TECHNOLOGY (HONG KONG) CO., LTD. All RIGHTS RESERVED.</li>
+      </ul>
+    </div>
+  </footer>
+  <script type="module" src="./main.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

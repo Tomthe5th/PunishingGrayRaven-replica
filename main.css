@@ -1,0 +1,75 @@
+/** @format */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.nav-menu {
+		@apply text-white  uppercase border-l px-4 py-8;
+	}
+	body {
+		scroll-behavior: smooth;
+		overflow-x: hidden;
+		font-family: "Pathway Extreme", sans-serif;
+	}
+	.herosection {
+		background-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.292),
+			transparent
+		);
+	}
+
+	.socials-container {
+		@apply flex justify-end items-center border-b py-2;
+	}
+	.providers {
+		@apply w-28;
+	}
+	.fa-socials {
+		@apply flex justify-center text-gray-200 p-1 text-xl bg-white bg-opacity-10 hover:bg-opacity-30;
+	}
+	.animate-x {
+		transform: translate(200px, 0);
+	}
+	.news-wrapper {
+		background-image: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.292),
+				transparent
+			),
+			url("./images/news-bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	 .carousel-btn {
+		@apply absolute top-0  z-30 flex items-center justify-center w-10 h-full px-4  cursor-pointer focus:outline-none bg-gray-900/50 hover:bg-gray-900/80;
+	}
+	.list-item {
+		background-color: transparent !important;
+		@apply capitalize text-white  text-2xl;
+	}
+	.list-item:hover {
+		background-color: transparent !important;
+	}
+	.sub-text {
+		@apply text-white px-4 py-1 flex justify-between mt-2 bg-white/10;
+	}
+	.sub-btn {
+		@apply text-white active:text-red-600 hover:text-white/70;
+	}
+	.cha-wrapper {
+		@apply py-4;
+	}
+	.cha-wrapper img {
+		@apply w-1/2;
+	}
+
+	#slider {
+		opacity: 1;
+		transition: opacity 700ms;
+	}
+	#slider .fade-out {
+		opacity: 0;
+	}
+}
