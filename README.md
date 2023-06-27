@@ -1,4 +1,4 @@
-# PGR-replica
+# PGR-replica [project halted due to exams]
 I'm making a game-website for design practice
 
 ORIGINAL : https://pgr.kurogame.net/#Home
