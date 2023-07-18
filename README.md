@@ -1,10 +1,13 @@
-# PGR-replica [project halted due to exams]
+# PGR-replica [react.js rework( coming soon)]
 I'm making a game-website for design practice
 
 ORIGINAL : https://pgr.kurogame.net/#Home
 PREVIEW:  https://pgr-replica.netlify.app
 ___________________________________________
 missing features - navigation,responsive,HUD animations, music//video liberary , optimization
+__________________________________________
+patch 0.0.1
+added custom HUD designs
 __________________________________________
 made with
 -vite
