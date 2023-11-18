@@ -1,4 +1,4 @@
-# PGR-replica [react.js rework( coming soon)]
+# PGR-replica [nextjs rewrite( soon)]
 I'm making a game-website for design practice
 
 ORIGINAL : https://pgr.kurogame.net/#Home
